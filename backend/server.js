@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Import the cors package
+const cors = require('cors'); 
 
 
 const app = express();
@@ -25,7 +25,7 @@ function moveRobot(x, y, direction, instructions,warehouseWidth,warehouseHeight)
       // Turn the robot 90 degrees right
       currentDirectionIndex = (currentDirectionIndex + 1) % 4;
     } else if (instruction === 'M') {
-      // Move the robot forward one grid point in the current direction
+
       x += dx[currentDirectionIndex];
       y += dy[currentDirectionIndex];
 
@@ -45,7 +45,6 @@ function moveRobot(x, y, direction, instructions,warehouseWidth,warehouseHeight)
 }
 
 
-// Route for handling the robot movement
 app.post('/api/rc-robots', (req, res) => {
   const { warehouseSize, robotDetails, robotInstructions } = req.body;
   const [warehouseWidth, warehouseHeight] = warehouseSize.split(' ').map(Number);
