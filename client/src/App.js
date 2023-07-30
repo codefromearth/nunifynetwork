@@ -19,7 +19,7 @@ function App() {
 
       const { data } = response;
       console.log(data);
-      setResult(data) // Display the final coordinates and heading for each robot
+      setResult(data) 
     } catch (error) {
       console.error('Error:', error);
     }
@@ -56,7 +56,7 @@ function App() {
         <br />
         <button type="submit">Submit</button>
         <div>
-          <h1>Final Coordinatite :{result}</h1>
+          <h1>Final Coordinate :{result}</h1>
         </div>
       </form>
     </div>
